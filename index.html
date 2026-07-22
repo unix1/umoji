@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>umoji</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1 class="brand">umoji</h1>
+        <div class="header-actions">
+          <button type="button" id="copy-btn" class="btn" disabled>Copy</button>
+          <button type="button" id="clear-btn" class="btn btn-ghost" disabled>Clear</button>
+        </div>
+      </header>
+
+      <section
+        id="message"
+        class="message"
+        contenteditable="true"
+        spellcheck="false"
+        role="textbox"
+        aria-multiline="true"
+        aria-label="Message. Select emoji to copy, or paste to add."
+        data-empty="true"
+      ></section>
+
+      <div class="search-wrap">
+        <label class="visually-hidden" for="search">Search emoji</label>
+        <input
+          id="search"
+          class="search"
+          type="search"
+          placeholder="Search emoji…"
+          autocomplete="off"
+          spellcheck="false"
+          autofocus
+        />
+      </div>
+
+      <section id="results" class="results" aria-live="polite"></section>
+      <p id="hint" class="hint">Type to search · click to add · select in the message to copy</p>
+    </div>
+
+    <script src="emoji-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
