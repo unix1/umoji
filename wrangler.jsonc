@@ -3,6 +3,9 @@
   "name": "umoji",
   "compatibility_date": "2026-07-21",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    // Serve index.html for unknown paths (e.g. /🎉🔥) so the SPA can read the URL.
+    // Existing files like /styles.css and /app.js still resolve normally.
+    "not_found_handling": "single-page-application"
   }
 }
