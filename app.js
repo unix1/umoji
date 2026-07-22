@@ -1,6 +1,6 @@
 (() => {
   const EMOJI = window.UMOJI_DATA || [];
-  const MAX_RESULTS = 96;
+  const MAX_RESULTS = 512;
 
   const messageEl = document.getElementById("message");
   const searchEl = document.getElementById("search");
