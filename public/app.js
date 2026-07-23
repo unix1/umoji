@@ -6,6 +6,7 @@
   const searchEl = document.getElementById("search");
   const resultsEl = document.getElementById("results");
   const copyBtn = document.getElementById("copy-btn");
+  const copyLinkBtn = document.getElementById("copy-link-btn");
   const clearBtn = document.getElementById("clear-btn");
 
   /** @type {string[]} */
@@ -112,6 +113,7 @@
     }
     messageEl.dataset.empty = message.length ? "false" : "true";
     copyBtn.disabled = message.length === 0;
+    copyLinkBtn.disabled = message.length === 0;
     clearBtn.disabled = message.length === 0;
   }
 
@@ -140,6 +142,7 @@
     if (joined === message.join("")) {
       messageEl.dataset.empty = chars.length ? "false" : "true";
       copyBtn.disabled = chars.length === 0;
+      copyLinkBtn.disabled = chars.length === 0;
       clearBtn.disabled = chars.length === 0;
       return;
     }
@@ -224,6 +227,7 @@
   searchEl.addEventListener("input", () => search(searchEl.value));
 
   copyBtn.addEventListener("click", () => copyText(message.join("")));
+  copyLinkBtn.addEventListener("click", () => copyText(location.href));
   clearBtn.addEventListener("click", clearMessage);
 
   messageEl.addEventListener("input", () => syncMessageFromEditor({ urlMode: "push" }));

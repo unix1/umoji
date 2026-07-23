@@ -12,6 +12,7 @@
         <h1 class="brand">umoji</h1>
         <div class="header-actions">
           <button type="button" id="copy-btn" class="btn" disabled>Copy</button>
+          <button type="button" id="copy-link-btn" class="btn" disabled aria-label="Copy link">Copy 🔗</button>
           <button type="button" id="clear-btn" class="btn btn-ghost" disabled>Clear</button>
         </div>
       </header>
@@ -41,8 +42,11 @@
       </div>
 
       <section id="results" class="results" aria-live="polite"></section>
-      <p id="hint" class="hint">Type to search · click to add · select in the message to copy</p>
     </div>
+
+    <footer class="footer">
+      Create an issue, contribute or run it yourself - see <a href="https://github.com/unix1/umoji" target="_blank" rel="noopener noreferrer">umoji on GitHub</a> - MIT License
+    </footer>
 
     <script src="emoji-data.js"></script>
     <script src="app.js"></script>
