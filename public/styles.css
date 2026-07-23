@@ -134,6 +134,11 @@ body {
   box-shadow: var(--shadow), 0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
+.message[data-empty="true"] {
+  display: flex;
+  align-items: center;
+}
+
 .message[data-empty="true"]:not(:focus)::before {
   content: "Your message appears here";
   color: var(--muted);
