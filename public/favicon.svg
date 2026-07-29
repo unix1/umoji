@@ -1,11 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="umoji">
-  <rect width="32" height="32" rx="8" fill="#0f7a4a"/>
-  <text
-    x="16"
-    y="22"
-    text-anchor="middle"
-    font-size="16"
-    font-family="system-ui, sans-serif"
-    fill="#f7faf7"
-  >u</text>
+  <defs>
+    <linearGradient id="tile" x1="6" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a9a5f"/>
+      <stop offset="100%" stop-color="#0b5f39"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="9" fill="url(#tile)"/>
+  <!-- soft highlight so the tile isn’t flat -->
+  <path
+    d="M9 0h14a9 9 0 0 1 9 9v3H0V9A9 9 0 0 1 9 0z"
+    fill="#ffffff"
+    opacity="0.12"
+  />
+  <!-- geometric u (path, not text — clearer at 16px) -->
+  <path
+    d="M9 8v8.25c0 3.87 3.13 7 7 7s7-3.13 7-7V8"
+    fill="none"
+    stroke="#f7faf7"
+    stroke-width="3.75"
+    stroke-linecap="round"
+  />
+  <!-- URL-leaf spark: slash + emoji dot -->
+  <path
+    d="M21.2 6.2l4.1 4.1"
+    fill="none"
+    stroke="#d8e8dc"
+    stroke-width="2.25"
+    stroke-linecap="round"
+  />
+  <circle cx="25.6" cy="10.6" r="2.35" fill="#eef3ef"/>
 </svg>
