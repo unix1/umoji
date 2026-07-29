@@ -20,13 +20,4 @@
     stroke-width="3.75"
     stroke-linecap="round"
   />
-  <!-- URL-leaf spark: slash + emoji dot -->
-  <path
-    d="M21.2 6.2l4.1 4.1"
-    fill="none"
-    stroke="#d8e8dc"
-    stroke-width="2.25"
-    stroke-linecap="round"
-  />
-  <circle cx="25.6" cy="10.6" r="2.35" fill="#eef3ef"/>
 </svg>
