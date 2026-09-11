@@ -110,15 +110,7 @@
 
   function titleForMessage(chars) {
     if (!chars.length) return DEFAULT_TITLE;
-    let seq = "";
-    let count = 0;
-    for (const emoji of chars) {
-      const n = [...emoji].length;
-      if (seq && count + n > TITLE_MAX_CHARS) break;
-      seq += emoji;
-      count += n;
-    }
-    return `${seq} (umoji)`;
+    return `${chars.slice(0, TITLE_MAX_CHARS).join("")} (umoji)`;
   }
 
   function syncTitle() {
