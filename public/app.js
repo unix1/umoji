@@ -1,6 +1,8 @@
 (() => {
   const EMOJI = window.UMOJI_DATA || [];
   const MAX_RESULTS = 512;
+  const DEFAULT_TITLE = document.title;
+  const TITLE_MAX_CHARS = 16;
 
   const messageEl = document.getElementById("message");
   const searchEl = document.getElementById("search");
@@ -106,6 +108,24 @@
     }
   }
 
+  function titleForMessage(chars) {
+    if (!chars.length) return DEFAULT_TITLE;
+    let seq = "";
+    let count = 0;
+    for (const emoji of chars) {
+      const n = [...emoji].length;
+      if (seq && count + n > TITLE_MAX_CHARS) break;
+      seq += emoji;
+      count += n;
+    }
+    return `${seq} (umoji)`;
+  }
+
+  function syncTitle() {
+    const next = titleForMessage(message);
+    if (document.title !== next) document.title = next;
+  }
+
   function renderMessage() {
     const text = message.join("");
     if (messageEl.textContent !== text) {
@@ -115,6 +135,7 @@
     copyBtn.disabled = message.length === 0;
     copyLinkBtn.disabled = message.length === 0;
     clearBtn.disabled = message.length === 0;
+    syncTitle();
   }
 
   function setMessage(chars, { urlMode = "push" } = {}) {
